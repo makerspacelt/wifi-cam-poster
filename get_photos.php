@@ -4,6 +4,7 @@
 chdir(__DIR__);
 
 $sd_host = '192.168.0.1:8080';
+ini_set('default_socket_timeout', 3); // timeout for controll requests
 $status = false;
 
 
@@ -57,7 +58,7 @@ function download_file($filename)
 	global $sd_host;
 	printf("Downloading %s ... ", $filename);
 	$url = sprintf('http://%s/download?num=1&fdir=100CANON&folderFlag=0&fn1=%s',$sd_host, $filename);
-	$cmd = sprintf('wget --timeout 10 -qO - "%s" | tar x 2>&1', $url);
+	$cmd = sprintf('wget --timeout 30 -qO - "%s" | tar x 2>&1', $url);
 	shell_exec($cmd);
 
 	if (!is_file($filename)) {
