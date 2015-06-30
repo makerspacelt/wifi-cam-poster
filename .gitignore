@@ -1,0 +1,9 @@
+*.JPG
+*.jpg
+*.AVI
+*.avi
+*.mp4
+last_downloaded_*
+/vendor/
+/*.phar
+
