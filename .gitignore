@@ -6,4 +6,5 @@
 last_downloaded_*
 /vendor/
 /*.phar
+Config.php
 
